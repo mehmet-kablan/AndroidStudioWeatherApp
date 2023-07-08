@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ADD8E6"
+    tools:context=".MainActivity">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/idRLcountries"
+        android:visibility="gone"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:text="Hoşgeldiniz"
+            android:textSize="40sp"
+            android:textColor="#6A5ACD"
+            android:layout_marginTop="10dp"
+
+
+            />
+
+       <TextView
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:text="Lütfen Bir Ülke Seçiniz"
+           android:textSize="30sp"
+           android:layout_centerHorizontal="true"
+           android:textAlignment="center"
+           android:layout_marginTop="80dp"
+           android:textColor="#6A5ACD"
+           />
+
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/idLVCountries"
+            android:layout_marginTop="150dp"
+            android:background="#87CEEB"
+
+            >
+
+        </ListView>
+
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/idRLcities"
+        android:visibility="gone"
+        >
+
+
+
+        <ListView
+        android:id="@+id/idLVcities"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_below="@id/idTVChooseCity"
+        android:layout_marginTop="150dp"
+        android:background="#87CEEB"
+        />
+
+
+
+        <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:text="Lütfen Bir Şehir Seçiniz"
+        android:id="@+id/idTVChooseCity"
+        android:layout_marginTop="80dp"
+        android:layout_centerHorizontal="true"
+        android:textAlignment="center"
+        android:textColor="#6A5ACD"
+        />
+
+        <Button
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/idBTNBack"
+            android:background="@drawable/backicon"
+            app:backgroundTint="@color/black"
+            />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/idRLHome"
+        android:visibility="visible"
+        >
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@color/black_shade_1"
+            android:id="@+id/idIVBack"
+            android:contentDescription="TODO" />
+
+        <Button
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="20dp"
+            android:id="@+id/idBTNBackCities"
+            android:background="@drawable/backicon"
+            app:backgroundTint="@color/black"
+            />
+
+        <TextView
+            android:id="@+id/idTVCityName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="80dp"
+            android:gravity="center"
+            android:padding="20dp"
+            android:text="Şehir ismi"
+            android:textAlignment="center"
+            android:textSize="25sp"
+            android:textColor="#6A5ACD"
+            />
+
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/idTVTemperature"
+            android:gravity="center"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="70"
+            android:textColor="#6A5ACD"
+            android:textSize="40sp"
+            android:layout_below="@id/idIVIcon"
+            />
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/idIVIcon"
+            android:src="@mipmap/ic_launcher"
+            android:layout_marginTop="150dp"
+            />
+
+        <TextView
+            android:id="@+id/idTVCondition"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/idTVTemperature"
+            android:gravity="center"
+            android:layout_marginTop="20dp"
+            android:text="Hava Durumu"
+            android:textAlignment="center"
+            android:textSize="30sp"
+            android:textColor="#6A5ACD"
+            />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/idRvWeather"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="Haftalık Hava Durumu"
+            android:textColor="#6A5ACD"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/idRvWeather"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            />
+
+
+
+
+
+
+
+    </RelativeLayout>
+
+
+
+</RelativeLayout>
